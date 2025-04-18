@@ -1,0 +1,12 @@
+POO 
+Paradigma que organiza el código en clases y objetos, basándose en los pilares:
+ - Encapsulación 
+ - Herencia 
+ - Polimorfismo 
+ - Abstracción
+
+ ## Clases
+ Una clase es un molde que define las características y comportamientos de un objeto.
+ 
+ ### Objeto
+ Un objeto es una instancia de una clase, con sus propias características y comportamientos.

@@ -2,11 +2,18 @@
 
 El asincronismo es una característica fundamental de Node.js que permite ejecutar operaciones sin bloquear el hilo principal. Esto es especialmente útil para operaciones I/O como leer archivos, hacer peticiones HTTP o consultar bases de datos.
 
+Vamos a ver tres enfoques para manejar asincronismo:
+- `Callbacks`
+- `Promesas`
+- `async/await`
+
 ## 📞 Callbacks
 
 Los callbacks son funciones que se pasan como argumentos a otras funciones y se ejecutan cuando una operación asíncrona se completa.
 
 ```javascript
+const fs = require('fs');
+
 fs.readFile('archivo.txt', (error, data) => {
     if (error) {
         console.error('Error:', error);
@@ -44,6 +51,7 @@ Las Promesas son objetos que representan un valor que puede estar disponible aho
 
 ```javascript
 const miPromesa = new Promise((resolve, reject) => {
+    const exito = true;
     // Operación asíncrona
     if (/* éxito */) {
         resolve(resultado);
@@ -58,10 +66,11 @@ const miPromesa = new Promise((resolve, reject) => {
 ```javascript
 miPromesa
     .then(resultado => {
-        return procesarResultado(resultado);
+        console.log('Resultado:', resultado);
+        return procesar(resultado);
     })
-    .then(resultadoProcesado => {
-        return guardarResultado(resultadoProcesado);
+    .then(final => {
+        console.log('Final:', final);
     })
     .catch(error => {
         console.error('Error:', error);
@@ -78,7 +87,8 @@ miPromesa
 async function miFuncion() {
     try {
         const resultado = await miPromesa;
-        const procesado = await procesarResultado(resultado);
+        const procesado = await procesar(resultado);
+        console.log('Procesado:', procesado);
         return procesado;
     } catch (error) {
         console.error('Error:', error);

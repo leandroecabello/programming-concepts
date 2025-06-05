@@ -1,95 +1,95 @@
-# Clean Architecture Example
+# 🧹 Clean Architecture
 
-This is an example of Clean Architecture implementation in Node.js, demonstrating the principles of separation of concerns and dependency inversion.
+Este ejemplo implementa Clean Architecture (también conocida como Onion Architecture) propuesta por Robert C. Martin (Uncle Bob). El caso de uso es un sistema de gestión de tareas (Todo List).
 
-## Project Structure
+## 📁 Estructura del Proyecto
 
 ```
 src/
-├── domain/           # Enterprise business rules
-│   ├── entities/     # Business objects
-│   └── interfaces/   # Repository interfaces
-├── application/      # Application business rules
-│   └── use-cases/    # Use cases implementation
-└── infrastructure/   # Frameworks and drivers
-    ├── controllers/  # Express controllers
-    ├── database/     # MongoDB implementation
-    └── routes/       # Express routes
+├── domain/           # Reglas de negocio empresariales
+│   ├── entities/     # Objetos de negocio
+│   └── interfaces/   # Interfaces de repositorios
+├── application/      # Reglas de negocio de la aplicación
+│   └── use-cases/    # Implementación de casos de uso
+└── infrastructure/   # Frameworks y drivers
+    ├── controllers/  # Controladores Express
+    ├── database/     # Implementación MongoDB
+    └── routes/       # Rutas Express
 ```
 
-## Features
+## 🚀 Características
 
-- Clean Architecture implementation
-- MongoDB integration
-- Express.js REST API
-- Task management (CRUD operations)
+- Implementación de Clean Architecture
+- Integración con MongoDB
+- API REST con Express.js
+- Gestión de tareas (operaciones CRUD)
 
-## Prerequisites
+## 📋 Prerrequisitos
 
-- Node.js (v14 or higher)
-- MongoDB (running locally on port 27017)
+- Node.js (v14 o superior)
+- MongoDB (ejecutándose localmente en el puerto 27017)
 
-## Installation
+## 🛠️ Instalación
 
-1. Install dependencies:
+1. Instalar dependencias:
 ```bash
 npm install
 ```
 
-2. Make sure MongoDB is running on your local machine
+2. Asegúrate de que MongoDB esté ejecutándose en tu máquina local
 
-3. Start the application:
+3. Iniciar la aplicación:
 ```bash
 npm start
 ```
 
-For development with auto-reload:
+Para desarrollo con recarga automática:
 ```bash
 npm run dev
 ```
 
-## API Endpoints
+## 🔌 Endpoints de la API
 
-- `POST /api/tasks` - Create a new task
-- `GET /api/tasks/:id` - Get a task by ID
-- `GET /api/tasks` - Get all tasks
-- `PUT /api/tasks/:id` - Update a task
-- `DELETE /api/tasks/:id` - Delete a task
+- `POST /api/tasks` - Crear una nueva tarea
+- `GET /api/tasks/:id` - Obtener una tarea por ID
+- `GET /api/tasks` - Obtener todas las tareas
+- `PUT /api/tasks/:id` - Actualizar una tarea
+- `DELETE /api/tasks/:id` - Eliminar una tarea
 
-## Example Usage
+## 📝 Ejemplo de Uso
 
-Create a new task:
+Crear una nueva tarea:
 ```bash
 curl -X POST http://localhost:3000/api/tasks \
   -H "Content-Type: application/json" \
-  -d '{"title": "Learn Clean Architecture", "description": "Study and implement Clean Architecture principles"}'
+  -d '{"title": "Aprender Clean Architecture", "description": "Estudiar e implementar principios de Clean Architecture"}'
 ```
 
-Get all tasks:
+Obtener todas las tareas:
 ```bash
 curl http://localhost:3000/api/tasks
 ```
 
-## Architecture Overview
+## 🏗️ Descripción de la Arquitectura
 
-This example follows Clean Architecture principles:
+Este ejemplo sigue los principios de Clean Architecture:
 
-1. **Domain Layer**: Contains enterprise business rules
-   - Entities: Core business objects
-   - Interfaces: Repository contracts
+1. **Capa de Dominio**: Contiene las reglas de negocio empresariales
+   - Entidades: Objetos de negocio principales
+   - Interfaces: Contratos de repositorios
 
-2. **Application Layer**: Contains application business rules
-   - Use Cases: Implementation of business operations
-   - Orchestrates the flow of data to and from entities
+2. **Capa de Aplicación**: Contiene las reglas de negocio de la aplicación
+   - Casos de Uso: Implementación de operaciones de negocio
+   - Orquesta el flujo de datos hacia y desde las entidades
 
-3. **Infrastructure Layer**: Contains frameworks and tools
-   - Controllers: Handle HTTP requests
-   - Database: MongoDB implementation
-   - Routes: API endpoint definitions
+3. **Capa de Infraestructura**: Contiene frameworks y herramientas
+   - Controladores: Manejan peticiones HTTP
+   - Base de Datos: Implementación de MongoDB
+   - Rutas: Definiciones de endpoints de la API
 
-The architecture ensures:
-- Independence of frameworks
-- Testability
-- Independence of UI
-- Independence of database
-- Independence of any external agency 
+La arquitectura asegura:
+- Independencia de frameworks
+- Testabilidad
+- Independencia de la UI
+- Independencia de la base de datos
+- Independencia de cualquier agencia externa 

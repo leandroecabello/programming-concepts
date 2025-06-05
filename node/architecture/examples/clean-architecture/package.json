@@ -1,0 +1,17 @@
+{
+  "name": "clean-architecture-example",
+  "version": "1.0.0",
+  "description": "Example of Clean Architecture in Node.js",
+  "main": "src/infrastructure/server.js",
+  "scripts": {
+    "start": "node src/infrastructure/server.js",
+    "dev": "nodemon src/infrastructure/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+} 
